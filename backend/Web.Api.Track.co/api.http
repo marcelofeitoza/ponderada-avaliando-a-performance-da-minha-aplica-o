@@ -1,0 +1,49 @@
+@host = http://localhost:5244
+@contentType = application/json
+
+###
+# Get all widgets
+GET {{host}}/widgets
+
+###
+# Get widget by ID
+GET {{host}}/widgets/1
+
+###
+# Create a new widget
+POST {{host}}/widgets
+Content-Type: {{contentType}}
+{
+  "Title": "Example Widget",
+  "Link": "http://example.com",
+  "Question": "What do you think?",
+  "Color": "#e5e7eb"
+}
+
+###
+# Create a new NPS for widget
+POST {{host}}/widgets/1/nps
+Content-Type: {{contentType}}
+{
+  "Answer": "Great service",
+  "Rating": 10
+}
+
+###
+# Get NPS by ID for a widget
+GET {{host}}/widgets/1/nps/1
+
+###
+# Update widget by ID
+PUT {{host}}/widgets/1
+Content-Type: {{contentType}}
+{
+  "Title": "Updated Title",
+  "Link": "http://exampleupdated.com",
+  "Question": "Updated question?",
+  "Color": "#000"
+}
+
+###
+# Delete widget by ID
+DELETE {{host}}/widgets/1
