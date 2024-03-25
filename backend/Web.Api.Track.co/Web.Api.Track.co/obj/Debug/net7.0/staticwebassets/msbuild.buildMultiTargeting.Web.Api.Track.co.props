@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/Web.Api.Track.co.props" />
-</Project>
